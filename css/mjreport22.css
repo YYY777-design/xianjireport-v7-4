@@ -331,11 +331,14 @@ body.propagation-modal-landscape-body-lock
     height: 100% !important;
 }
 
-/* 传播洞察-参与结构桑基图：层级「话题 / 原发 / 扩散」+ 图表区撑满剩余高度 */
+/* 传播洞察-参与结构桑基图：纵向 flex，高度随「更多设置」筛选项展开而增高，避免桑基图溢出白色模块 */
 #propInsightSankeyWrap.prop-insight-sankey-wrap
 {
+    display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    /*min-height: 480px;*/
+    height: auto;
 }
 
 .prop-insight-sankey-layer-labels
@@ -370,10 +373,11 @@ body.propagation-modal-landscape-body-lock
 
 #propInsightSankeyWrap.prop-insight-sankey-wrap #propInsightSankeyChart
 {
-    flex: 1 1 auto;
-    min-height: 0;
+    flex: 0 0 auto;
     width: 100%;
-    height: auto !important;
+    min-height: 360px;
+    height: 360px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px)
